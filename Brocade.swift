@@ -7,8 +7,17 @@
 
 import Foundation
 
-public protocol BrocadeProtocol: class {
+public protocol BrocadeProtocol: AnyObject {
+    /// Received multiple optional `Item` objects from API response.
+    /// - Parameters:
+    ///   - items: Array of optional `Item` objects.
+    ///   - error: Optional `Error` object.
     func receivedMultipleItems(_ items: [Item]?, _ error: Error?)
+    
+    /// Received single optional `Item` object from API response.
+    /// - Parameters:
+    ///   - item: Optional `Item` objects.
+    ///   - error: Optional `Error` object.
     func receivedSingleItem(_ item: Item?, _ error: Error?)
 }
 
@@ -44,7 +53,7 @@ public class Brocade {
     
     /// List all items, limited to 100 per request.
     ///
-    /// - Parameter completion: Optional closure returning multiple optional `Item` objects and an optional `Error`.
+    /// - Parameter completion: Optional closure returning an array of optional `Item` objects and an optional `Error`.
     public func listItems(completion: MultipleItemResponse? = nil) {
         apiClient.request(.get, endpoint: .items) { [weak self] (items: [Item]?, error: Error?) in
             self?.delegate?.receivedMultipleItems(items, error)
@@ -52,10 +61,10 @@ public class Brocade {
         }
     }
     
-    /// Look up an item by its UPC or EAN.
+    /// Look up an item by its GTIN-14, UPC or EAN code.
     ///
     /// - Parameters:
-    ///   - code: UPC or EAN.
+    ///   - code: GTIN-14, UPC or EAN code.
     ///   - completion: Optional closure returning a single optional `Item` object and an optional `Error`.
     public func getItem(code: String, completion: SingleItemResponse? = nil) {
         apiClient.request(.get, endpoint: .getItem(code)) { [weak self] (item: Item?, error: Error?) in
@@ -64,11 +73,11 @@ public class Brocade {
         }
     }
     
-    /// Search for an item
+    /// Search for an item.
     ///
     /// - Parameters:
     ///   - query: Product search query.
-    ///   - completion: Optional closure returning multiple optional `Item` objects and an optional `Error`.
+    ///   - completion: Optional closure returning an array of optional `Item` objects and an optional `Error`.
     public func searchItem(query: String, completion: MultipleItemResponse? = nil) {
         apiClient.request(.get, endpoint: .items, query: query) { [weak self] (items: [Item]?, error: Error?) in
             self?.delegate?.receivedMultipleItems(items, error)

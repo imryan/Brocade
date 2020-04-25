@@ -1,0 +1,27 @@
+PODS:
+  - Brocade (0.1.0)
+  - Nimble (7.3.4)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - Brocade (from `../`)
+  - Nimble (~> 7.0)
+  - Quick (~> 1.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  Brocade:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Brocade: 13355e8a9671a50977c6f7fc8fe642544b3786bd
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 531768b1b8f5c6542b4cd657dc6d63c82001f0ed
+
+COCOAPODS: 1.9.0

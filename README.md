@@ -1,4 +1,5 @@
-# Brocade
+# 📦 Brocade
+Swift library for the free and open product database.
 
 [![CI Status](https://img.shields.io/travis/imryan/Brocade.svg?style=flat)](https://travis-ci.org/imryan/Brocade)
 [![Version](https://img.shields.io/cocoapods/v/Brocade.svg?style=flat)](https://cocoapods.org/pods/Brocade)

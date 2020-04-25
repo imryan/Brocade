@@ -24,7 +24,7 @@ brocade.getItem(code: "00074887615305")
 
 // Get item by code using closure
 brocade.getItem(code: "00074887615305") { (item, error) in
-    debugPrint("Item: \(item). Error: \(error?.localizedDescription).")
+    debugPrint("Item: \(item.itemSummary). Error: \(error?.localizedDescription).")
 }
 
 // Search item by query using delegate

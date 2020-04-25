@@ -5,6 +5,37 @@
 [![License](https://img.shields.io/cocoapods/l/Brocade.svg?style=flat)](https://cocoapods.org/pods/Brocade)
 [![Platform](https://img.shields.io/cocoapods/p/Brocade.svg?style=flat)](https://cocoapods.org/pods/Brocade)
 
+## Usage
+
+```swift
+// List last 100 items using delegate
+let brocade = Brocade(delegate: self)
+brocade.listItems()
+
+// List last 100 items using closure
+brocade.listItems { (items, error) in
+    debugPrint("Items: \(items). Error: \(error?.localizedDescription).")
+}
+
+// Get item by code using delegate
+let brocade = Brocade(delegate: self)
+brocade.getItem(code: "00074887615305")
+
+// Get item by code using closure
+brocade.getItem(code: "00074887615305") { (item, error) in
+    debugPrint("Item: \(item). Error: \(error?.localizedDescription).")
+}
+
+// Search item by query using delegate
+let brocade = Brocade(delegate: self)
+brocade.searchItem(query: "milk")
+
+// Search item by query using closure
+brocade.searchItem(query: "milk") { (items, error) in
+    debugPrint("Items: \(items). Error: \(error?.localizedDescription).")
+}
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

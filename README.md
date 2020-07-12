@@ -41,6 +41,9 @@ brocade.searchItem(query: "milk") { (items, error) in
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+![](Screenshots/list.png)
+![](Screenshots/search.png)
+	
 ## Installation
 
 Brocade is available through [CocoaPods](https://cocoapods.org). To install

@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     private func reloadTableView() {
         DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+            self?.tableView.reloadSections([0], with: .automatic)
         }
     }
     

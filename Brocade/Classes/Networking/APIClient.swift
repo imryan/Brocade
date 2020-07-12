@@ -20,10 +20,12 @@ class APIClient {
         case items
         case getItem(String)
         
+        static let baseURL: String = "https://www.brocade.io/api"
+        
         var description: String {
             switch self {
             case .base:
-                return "https://www.brocade.io/api"
+                return Self.baseURL
             case .items:
                 return "\(Self.base)/items"
             case .getItem(let code):

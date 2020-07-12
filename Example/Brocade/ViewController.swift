@@ -86,11 +86,11 @@ class ViewController: UIViewController {
     }
     
     private func showAlertController(title: String, message: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             
-            self.present(alertController, animated: true, completion: nil)
+            self?.present(alertController, animated: true, completion: nil)
         }
     }
     

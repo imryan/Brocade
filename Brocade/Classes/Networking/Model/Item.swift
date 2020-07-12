@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Item: Codable {
+public struct Item: Codable, CustomStringConvertible {
     
     // MARK: - Attributes -
     
@@ -66,7 +66,7 @@ public struct Item: Codable {
     public let transFat: String?
     
     /// Item summary
-    public var itemSummary: String {
+    public var description: String {
         return """
         GTIN-14: \(gtin14)
         Name: \(name ?? "N/A")

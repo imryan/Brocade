@@ -161,7 +161,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = items[indexPath.row]
-        showAlertController(title: "Item", message: selectedItem.itemSummary)
+        showAlertController(title: "Item", message: selectedItem.description)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

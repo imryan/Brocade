@@ -25,9 +25,9 @@ class APIClient {
             case .base:
                 return "https://www.brocade.io/api"
             case .items:
-                return "\(Endpoint.base)/items"
+                return "\(Self.base)/items"
             case .getItem(let code):
-                return "\(Endpoint.items)/\(code)"
+                return "\(Self.items)/\(code)"
             }
         }
     }
